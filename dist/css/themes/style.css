@@ -1,0 +1,2172 @@
+@font-face {
+
+    font-family: 'latobold';
+
+    src: url('../font/lato/lato-bold.woff2') format('woff2'),
+
+    url('../font/lato/lato-bold.woff') format('woff');
+
+    font-weight: normal;
+
+    font-style: normal;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+@font-face {
+
+    font-family: 'latoregular';
+
+    src: url('../font/lato/lato-regular.woff2') format('woff2'),
+
+    url('../font/lato/lato-regular.woff') format('woff');
+
+    font-weight: normal;
+
+    font-style: normal;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+@font-face {
+
+    font-family: 'latolight';
+
+    src: url('../font/lato/lato-light.woff2') format('woff2'),
+
+    url('../font/lato/lato-light.woff') format('woff');
+
+    font-weight: normal;
+
+    font-style: normal;
+
+
+
+}
+
+
+
+body {
+
+    font-size: 14px;
+
+}
+
+
+
+h1,
+
+h2,
+
+h3 {
+
+    font-family: '';
+
+}
+
+
+
+h4 {
+
+    font-family: '';
+
+}
+
+
+
+h4 {}
+
+
+
+p {
+
+    font-family: 'latoregular';
+
+    font-size: 16px;
+
+}
+
+
+
+img {
+
+    max-width: 100%;
+
+}
+
+
+
+.live-call {
+
+    text-align: end;
+
+}
+
+
+
+.top-header {
+
+    background-color: #333333;
+
+}
+
+
+
+.cretona-unordered {
+
+    padding: 0;
+
+    float: right;
+
+    margin-bottom: 0;
+
+}
+
+
+
+.cretona-unordered li {
+
+    float: left;
+
+    margin-right: 16px;
+
+    list-style: none;
+
+    padding: 14px 0 14px 0;
+
+}
+
+
+
+.cretona-unordered li span {
+
+    padding-right: 8px;
+
+}
+
+
+
+.cretona-unordered .cretona-live a {
+
+    font-family: 'latoregular';
+
+    font-size: 14px;
+
+    color: #ffffff;
+
+}
+
+
+
+.cretona-unordered .account-cretona-login {
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-family: 'latobold';
+
+    text-transform: uppercase;
+
+}
+
+
+
+.cretona-unordered .get-cretona-started {
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    font-family: 'latobold';
+
+}
+
+
+
+li.cretona-started {
+
+    background-color: #03a9f4;
+
+    padding: 14px 32px;
+
+    margin-right: 0;
+
+
+
+}
+
+
+
+.cretona-pages li a {
+
+    font-size: 18px;
+
+    color: #333333;
+
+    text-transform: uppercase;
+
+}
+
+
+
+.cretona-pages li {
+
+    padding: 0.3em 7px;
+
+}
+
+
+
+.ml-auto.cretona-pages a.nav-link.active {
+
+    background-image: url(../images/bottom-border.png);
+
+    background-position: bottom;
+
+    background-repeat: no-repeat;
+
+    color: #03a9f4!important;
+
+}
+
+
+
+.online-services {
+
+    background-image: url(../images/banner-1.jpg);
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+}
+
+
+
+.cretona-pages li a.nav-link {
+
+    font-family: 'latobold';
+
+}
+
+
+
+.cretona-navbar {
+
+    padding-top: 1em;
+
+    padding-bottom: 1em;
+
+}
+
+
+
+.dropdown-flag .dropdown-toggle::after {
+
+    display: none;
+
+}
+
+
+
+.dropdown-flag .btn {
+
+    padding: 0;
+
+    background-color: transparent;
+
+}
+
+
+
+.dropdown-flag .btn:focus,
+
+.btn.focus {
+
+    outline: 0;
+
+    box-shadow: none;
+
+}
+
+
+
+.cretona-pages {
+
+    margin-right: 2em;
+
+}
+
+
+
+.costs-content {
+
+    padding: 18.6% 0;
+
+    text-align: end;
+
+    float: left;
+
+    max-width: 52%;
+
+}
+
+
+
+.costs-content h3 {
+
+    color: #fff;
+
+    text-transform: uppercase;
+
+    font-family: 'latobold';
+
+    font-size: 30px;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.costs-content h3 {
+
+    background-image: url(../images/bottom-border-1.png);
+
+    background-repeat: no-repeat;
+
+    background-position: right;
+
+    background-position-y: bottom;
+
+    padding-bottom: 18px;
+
+}
+
+
+
+.costs-content p {
+
+    color: #fff;
+
+    text-transform: uppercase;
+
+}
+
+
+
+.peronal-tab {
+
+    background-color: #fefefed1;
+
+    background: rgba(242, 241, 239, 0.9);
+
+    padding-top: 2em;
+
+    padding-bottom: 4em;
+
+    max-width: 44%;
+
+    float: right;
+
+    padding-right: 30px;
+
+    padding-left: 30px;
+
+}
+
+
+
+.address-extra h3 {
+
+    font-size: 30px;
+
+    color: #333333;
+
+    font-family: 'latoregular';
+
+    text-transform: uppercase;
+
+}
+
+
+
+.address-extra h3 {
+
+    background-image: url(../images/bottom-border-1.png);
+
+    background-repeat: no-repeat;
+
+    background-position: left;
+
+    background-position-y: bottom;
+
+    padding-bottom: 10px;
+
+}
+
+
+
+.peronal-tab .form-group input, .peronal-tab .form-group textarea {
+
+    border: none;
+
+    background-color: transparent;
+
+    border-bottom: 1px solid #333333;
+
+    padding: 0 0 16px 0;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    font-family: 'latobold';
+
+    color: #333333;
+
+    font-size: 14px;
+
+    text-transform: uppercase;
+
+}
+
+
+
+.peronal-tab .form-group input::placeholder ,.peronal-tab .form-group textarea::placeholder{
+
+    font-family: 'latobold';
+
+    color: #333333;
+
+    font-size: 14px;
+
+    text-transform: uppercase;
+
+}
+
+
+
+.address-btn{
+
+    padding-bottom: 30px;
+
+}
+
+.extra-input {
+
+    float: left;
+
+    padding-top: 30px;
+
+}
+
+
+
+.address-extra {
+
+    float: left;
+
+    padding-top: 30px;
+
+}
+
+
+
+.address-extra button {
+
+    background-color: #03a9f4;
+
+    color: #fff;
+
+    font-size: 14px;
+
+    text-transform: uppercase;
+
+    padding: 10px 20px;
+
+    border: none;
+
+}
+
+
+
+.address-extra button:active {
+
+    background-color: #03a9f4 !important;
+
+    color: #fff !important;
+
+    border: none !important;
+
+}
+
+
+
+.address-extra .btn-primary:hover {
+
+    background-color: #03a9f4 !important;
+
+    color: #fff !important;
+
+    border: none !important;
+
+}
+
+
+
+.address-extra .btn-primary:focus,
+
+.btn-primary.focus {
+
+    box-shadow: none;
+
+}
+
+
+
+.address-extra button span {
+
+    padding-right: 4px;
+
+}
+
+
+
+.address-extra p {
+
+    font-size: 14px;
+
+    color: #333333;
+
+
+
+}
+
+
+
+.address-extra p a {
+
+    color: #03a9f4;
+
+}
+
+
+
+.final-services {
+
+    background-color: #f7f7f7;
+
+}
+
+
+
+
+
+.service-service h5 {
+
+    margin-top: 15px;
+
+    padding-left: 10px;
+
+    font-size: 18px;
+
+    margin-bottom: 0;
+
+    color: #1a1a1a;
+
+    text-transform: uppercase;
+
+    font-family: 'latoregular';
+
+}
+
+
+
+.service-text p {
+
+    font-size: 14px;
+
+    color: #535353;
+
+}
+
+
+
+
+
+.service-text {
+
+    float: left;
+
+    padding-right: 0;
+
+}
+
+
+
+.property-owners {
+
+    padding-top: 5em;
+
+    padding-bottom: 5em;
+
+}
+
+
+
+.one-stop h3 {
+
+    font-size: 30px;
+
+    color: #171717;
+
+    text-transform: uppercase;
+
+    font-family: 'latoregular';
+
+}
+
+
+
+.one-stop p {
+
+    color: #171717;
+
+    font-size: 16px;
+
+    text-transform: uppercase;
+
+    font-family: 'latoregular';
+
+}
+
+
+
+.one-stop p {
+
+    background-image: url(../images/bottom-border-1.png);
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+    background-position-y: 40px;
+
+    padding-bottom: 20px;
+
+}
+
+
+
+.main-services {
+
+    float: left;
+
+    padding: 0;
+
+    padding-top: 4em;
+
+    padding-bottom: 2em;
+
+}
+
+
+
+.inner-services {
+
+    float: left;
+
+    padding-left: 0;
+
+}
+
+
+
+.service-service {
+
+    float: left;
+
+    padding: 0;
+
+}
+
+
+
+.service-service .service-image {
+
+    padding: 0;
+
+    float: left;
+
+}
+
+
+
+.service-service .servicetext {
+
+    float: right;
+
+    padding: 0;
+
+}
+
+
+
+.cretona-women {
+
+    background-image: url(../images/banner-2.jpg);
+
+    background-size: cover;
+
+    background-repeat: no-repeat;
+
+}
+
+
+
+.trust-worthy {
+
+    padding-top: 12em;
+
+    padding-bottom: 12em;
+
+    padding-right: 0;
+
+    padding-left: 0;
+
+}
+
+
+
+.trust-worthy .one-stop {
+
+    padding: 0;
+
+}
+
+
+
+.trust-worthy .service-text {
+
+    padding: 0;
+
+}
+
+
+
+.trust-worthy .address-extra {
+
+    padding: 0;
+
+}
+
+
+
+.trust-worthy .one-stop h5 {
+
+    font-size: 18px;
+
+    color: #1a1a1a;
+
+    text-transform: uppercase;
+
+    font-family: 'latoregular';
+
+}
+
+
+
+.trust-worthy .service-text p {
+
+    color: #171717;
+
+    font-size: 16px;
+
+}
+
+
+
+.trust-worthy .service-text .some-limits a {
+
+    color: #555555;
+
+    font-size: 12px;
+
+    text-decoration: underline;
+
+}
+
+
+
+.trust-worthy .service-text .some-limits {
+
+    border-bottom: 1px solid #333333;
+
+    padding-bottom: 8px;
+
+    margin-bottom: 8px;
+
+}
+
+
+
+.trust-worthy .service-text .start-saving {
+
+    width: 90%;
+
+}
+
+
+
+.trust-worthy .service-text .full-disruption {
+
+    font-size: 14px;
+
+}
+
+
+
+.trust-worthy .address-extra button {
+
+    padding: 14px 54px 14px 44px;
+
+}
+
+
+
+.trust-worthy .address-extra button span {
+
+    padding-right: 10px;
+
+}
+
+
+
+.trust-worthy .address-extra button img {
+
+    padding: 8px;
+
+}
+
+
+
+.processing-costs .one-stop h3 {
+
+    width: 85%;
+
+    margin: 0 auto;
+
+    margin-bottom: 22px;
+
+}
+
+
+
+.online-relations {
+
+    padding: 0;
+
+    float: left;
+
+}
+
+
+
+.estate-industry {
+
+    float: left;
+
+    text-align: center;
+
+    max-width: 20%;
+
+}
+
+
+
+.processing-costs .one-stop {
+
+    padding-bottom: 3.5em;
+
+}
+
+
+
+.estate-industry p {
+
+    margin-top: 2em;
+
+    margin-bottom: 0;
+
+    color: #535353;
+
+}
+
+
+
+.cretona-eliminates .one-stop {
+
+    float: left;
+
+}
+
+
+
+.cretona-eliminates .address-extra {}
+
+
+
+.financial-information {
+
+    background-color: #03a9f4;
+
+}
+
+
+
+.cretona-eliminates .address-extra button {
+
+    background-color: #fff;
+
+    color: #333333;
+
+    font-size: 18px;
+
+    padding: 1em 2.5em 1em 2.5em;
+
+}
+
+
+
+.cretona-eliminates .one-stop h3 {
+
+    color: #fff;
+
+    margin-bottom: 0;
+
+}
+
+
+
+.cretona-eliminates .one-stop h5 {
+
+    color: #fff;
+
+}
+
+
+
+
+
+.cretona-eliminates .address-extra button:active {
+
+    background-color: #fff !important;
+
+    color: #333333 !important;
+
+    border: none !important;
+
+}
+
+
+
+.cretona-eliminates .address-extra button:hover {
+
+    background-color: #fff !important;
+
+    color: #333333 !important;
+
+    border: none !important;
+
+}
+
+
+
+.cretona-eliminates .address-extra button .btn-primary:focus,
+
+.btn-primary.focus {
+
+    box-shadow: none;
+
+}
+
+
+
+.cretona-eliminates .address-extra {
+
+    padding-top: 0;
+
+    text-align: end;
+
+}
+
+
+
+.property-owners.cretona-eliminates {
+
+    padding-top: 6em;
+
+    padding-bottom: 6em;
+
+}
+
+
+
+.cretona-footer {
+
+    background-color: #333333;
+
+}
+
+
+
+.padding-zero {
+
+    float: left;
+
+    padding: 0;
+
+    padding-bottom: 4em;
+
+    border-bottom: 3px solid #f0f0f0;
+
+}
+
+
+
+.footer-logo {
+
+    padding: 0;
+
+    float: left;
+
+}
+
+
+
+.footer-content {
+
+    float: left;
+
+}
+
+
+
+.footer-content h5 {
+
+    font-size: 18px;
+
+    color: #fff;
+
+    text-transform: uppercase;
+
+    font-family: 'latoregular';
+
+}
+
+
+
+.footer-content h5 {
+
+    background-image: url(../images/bottom-border-2.png);
+
+    background-repeat: no-repeat;
+
+    background-position: left;
+
+    background-position-y: bottom;
+
+    padding-bottom: 8px;
+
+}
+
+
+
+.footer-content .cretona-unordered {
+
+    float: left;
+
+}
+
+
+
+.footer-content .cretona-unordered li a {
+
+    color: #fff;
+
+    font-size: 16px;
+
+    font-family: 'latoregular';
+
+}
+
+
+
+.footer-copyright p {
+
+    color: #fff;
+
+    font-size: 14px;
+
+}
+
+
+
+.footer-copyright {
+
+    float: left;
+
+    padding-top: 3em;
+
+}
+
+
+
+.cretona-footer .property-owners {
+
+    padding-bottom: 2em;
+
+}
+
+
+
+
+
+/*benefits page*/
+
+
+
+.connect-prople {
+
+    position: absolute;
+
+    float: left;
+
+    color: #fff;
+
+    padding-top: 10.5em;
+
+}
+
+
+
+.connect-prople h3 {
+
+    background-image: url(../images/bottom-border-1.png);
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+    background-position-y: bottom;
+
+    padding-bottom: 24px;
+
+    color: #fff;
+
+    text-transform: uppercase;
+
+    font-family: 'latobold';
+
+    font-size: 30px;
+
+    margin-bottom: 20px;
+
+    width: 41%;
+
+    margin: 0 auto;
+
+}
+
+
+
+.save-time {
+
+    float: left;
+
+}
+
+
+
+.cost-effective .inner-effective {
+
+    padding-top: 6em;
+
+    padding-bottom: 6em;
+
+}
+
+
+
+.finding-right {
+
+    float: left;
+
+}
+
+
+
+.finding-right {}
+
+
+
+.grey-shape::after {
+
+    content: url(../images/shap-1.png);
+
+    position: absolute;
+
+    top: 0;
+
+    right: -15px;
+
+}
+
+
+
+.blue-shape::after {
+
+    content: url(../images/shap-2.png);
+
+    position: absolute;
+
+    top: 0;
+
+    left: -12px;
+
+}
+
+
+
+.dark-shape::after {
+
+    content: url(../images/shap-3.png);
+
+    position: absolute;
+
+    top: 0;
+
+    right: -15px;
+
+}
+
+
+
+.cost-text {
+
+    padding-top: 4em;
+
+}
+
+
+
+.cost-text h4 {
+
+    color: #333333;
+
+    font-size: 24px;
+
+    text-transform: uppercase;
+
+    font-family: 'latobold';
+
+
+
+    background-image: url(../images/bottom-border-1.png);
+
+    background-repeat: no-repeat;
+
+    background-position: left;
+
+    background-position-y: bottom;
+
+    padding-bottom: 24px;
+
+    margin-bottom: 16px;
+
+
+
+}
+
+
+
+.cost-text p {
+
+    color: #333333;
+
+    font-size: 18px;
+
+}
+
+
+
+.more-left {
+
+    padding-left: 4em;
+
+    padding-right: 2em;
+
+}
+
+
+
+.more-right {
+
+    padding-left: 4em;
+
+    padding-right: 4em;
+
+}
+
+
+
+
+
+.float-extra {
+
+    float: right;
+
+}
+
+
+
+/*benefits page*/
+
+
+
+/*about page*/
+
+
+
+.team h3 {
+
+    font-family: 'latoregular';
+
+    background-image: url(../images/bottom-border-1.png);
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+    background-position-y: bottom;
+
+    margin-top: 30px;
+
+    padding-bottom: 10px;
+
+}
+
+
+
+.bio-text h3 {
+
+    font-size: 24px;
+
+    color: #333333;
+    font-family: 'latoregular';
+    margin-bottom: 6px;
+
+}
+
+
+
+.bio-text h4 {
+
+    color: #03a9f4;
+
+    font-size: 16px;
+    font-family: 'latoregular';
+
+}
+
+
+
+.bio-text p {
+
+    font-size: 14px;
+    text-align: justify;
+
+}
+
+
+
+.bio-text {
+
+    padding: 3em 0em;
+
+}
+
+
+
+.main-bio {
+
+    padding: 4em 0em;
+
+    border-bottom: solid thin #000;
+
+}
+
+
+
+.main-bio-img {
+
+    float: left;
+
+}
+
+
+
+.bio-text {
+
+    padding: 3em 0em;
+
+    float: left;
+
+}
+
+
+
+.bio-more {
+
+    border-bottom: none;
+
+}
+
+
+
+/*about page*/
+
+
+
+.country-flag {
+
+    display: none;
+
+}
+
+
+
+@media (max-width: 1300px) {}
+
+
+
+@media (max-width: 1287px) {}
+
+
+
+@media (max-width: 1199px) {
+
+    .service-service h5 {
+
+        padding-left: 0;
+
+    }
+
+    h3 {
+
+        font-size: 28px !important;
+
+    }
+
+    h5 {
+
+        font-size: 17px !important;
+
+    }
+
+    p {
+
+        font-size: 13px !important;
+
+    }
+
+
+
+    .costs-content {
+
+        max-width: 50%;
+
+    }
+
+    .peronal-tab {
+
+        max-width: 50%;
+
+    }
+
+    .cretona-women {
+
+        background-size: contain;
+
+    }
+
+    .service-service .service-image {
+
+        max-width: 100%;
+
+        text-align: center;
+
+        float: none;
+
+    }
+
+    .service-service .servicetext {
+
+        float: none;
+
+        max-width: 100%;
+
+    }
+
+    .service-text {
+
+        padding: 0;
+
+    }
+
+    .inner-services {
+
+        padding-left: 15px;
+
+    }
+
+    .footer-content .cretona-unordered li a {
+
+        font-size: 15px;
+
+    }
+
+
+
+    .connect-prople h3 {
+
+        width: 60%;
+
+    }
+
+    .cost-text {
+
+        padding-top: 2em;
+
+    }
+
+    .more-right {
+
+        padding-left: 2em;
+
+        padding-right: 2em;
+
+    }
+
+    .more-left {
+
+        padding-left: 2em;
+
+        padding-right: 2em;
+
+    }
+
+    .blue-shape::after {
+
+        overflow: hidden;
+
+        max-height: 294px;
+
+    }
+
+
+
+
+
+}
+
+
+
+@media (max-width: 991px) {
+
+
+
+    .service-service h5 {
+
+        margin-bottom: 15px;
+
+    }
+
+
+
+    .costs-content {
+
+        max-width: 100%;
+
+        float: left;
+
+        text-align: center;
+
+        padding-top: 5em;
+
+        padding-bottom: 2em;
+
+    }
+
+    .costs-content h3 {
+
+        background-position: center;
+
+        background-position-y: bottom;
+
+    }
+
+    .peronal-tab {
+
+        max-width: 100%;
+
+    }
+
+    .inner-services {
+
+        max-width: 100%;
+
+        text-align: center;
+
+    }
+
+    .service-text {
+
+        padding-right: 15px;
+
+        padding-left: 15px;
+
+    }
+
+
+
+    .main-services {
+
+        padding-top: 0;
+
+    }
+
+    .cretona-women {
+
+        background-color: #c7d0d9;
+
+        background-image: none;
+
+        text-align: center;
+
+    }
+
+    .processing-costs .one-stop h3 {
+
+        width: 100%;
+
+    }
+
+    .cretona-eliminates .one-stop {
+
+        float: none;
+
+        max-width: 100%;
+
+        margin-bottom: 2em;
+
+        text-align: center;
+
+    }
+
+    .cretona-eliminates .address-extra {
+
+        max-width: 100%;
+
+        text-align: center;
+
+    }
+
+    .trust-worthy {
+
+        padding-top: 5em;
+
+        padding-bottom: 5em;
+
+    }
+
+    .trust-worthy .address-extra button {
+
+        padding: 16px 50px;
+
+    }
+
+
+
+
+
+    .dark-shape::after {
+
+        content: "";
+
+    }
+
+    .more-right {
+
+        padding-left: 0;
+
+        padding-right: 0;
+
+    }
+
+
+
+    .more-left {
+
+        padding-left: 0;
+
+        padding-right: 0;
+
+    }
+
+    .blue-shape::after {
+
+        content: "";
+
+    }
+
+    .grey-shape::after {
+
+        content: "";
+
+    }
+
+    .cost-effective {
+
+        text-align: center;
+
+    }
+
+    .cost-text h4 {
+
+        background-position: center;
+
+        background-position-y: bottom;
+
+    }
+
+    /*about page*/
+
+    .bio-text {
+
+        padding: 2em 0em;
+
+    }
+
+}
+
+
+
+@media (max-width: 800px) {}
+
+
+
+@media (max-width: 767px) {
+
+    .nav-container .navbar-toggler {
+
+        margin-right: 1em;
+
+    }
+
+    .nav-container .navbar-brand {
+
+        margin-left: 1em;
+
+    }
+
+    .cretona-pages li {
+
+        padding: 0;
+
+    }
+
+    .cretona-navbar {
+
+        padding: 0;
+
+    }
+
+
+
+
+
+    .ml-auto.cretona-pages a.nav-link.active {
+
+        background-image: none;
+
+        background-color: #333333;
+
+        color: #fff !important;
+
+    }
+
+    .nav-container {
+
+        max-width: 100%;
+
+        width: 100%;
+
+    }
+
+    .cretona-pages {
+
+        margin-right: 0;
+
+    }
+
+    h3 {
+
+        font-size: 26px !important;
+
+    }
+
+    .property-owners .one-stop h3 {
+
+        margin-bottom: 1em;
+
+    }
+
+    .trust-worthy {
+
+        padding-right: 15px;
+
+        padding-left: 15px;
+
+    }
+
+
+
+    .costs-content {
+
+        padding-top: 5em;
+
+        padding-bottom: 2em;
+
+    }
+
+    .one-stop p {
+
+        background-position-y: 25px;
+
+        padding-bottom: 10px;
+
+    }
+
+    .estate-industry {
+
+        max-width: 100%;
+
+        margin-bottom: 2em;
+
+    }
+
+    .cretona-women {
+
+        text-align: center;
+
+    }
+
+
+
+    .footer-logo {
+
+        margin-bottom: 2em;
+
+    }
+
+    .footer-content {
+
+        padding: 0;
+
+    }
+
+    .connect-prople h3 {
+
+        width: 90%;
+
+    }
+
+
+
+    .connect-prople {
+
+        padding-top: 11.5em;
+
+    }
+
+
+
+    /*about page*/
+
+    .bio-text {
+
+        padding: 2em 0em 0em;
+
+        text-align: center;
+
+    }
+
+    .main-bio {
+
+        padding: 2em 0em;
+
+    }
+
+
+
+}
+
+
+
+@media (max-width: 575px) {
+
+    .property-owners {
+
+        padding-top: 2em;
+
+        padding-bottom: 2em;
+
+    }
+
+    .property-owners.cretona-eliminates {
+
+        padding-top: 2em;
+
+        padding-bottom: 2em;
+
+    }
+
+    .trust-worthy {
+
+        padding-top: 2em;
+
+        padding-bottom: 2em;
+
+    }
+
+    .property-owners .main-services {
+
+        padding-bottom: 0;
+
+    }
+
+    .peronal-tab {
+
+        padding-bottom: 2em;
+
+    }
+
+    .address-extra {
+
+        padding-top: 0;
+
+    }
+
+    .padding-zero {
+
+        padding-bottom: 2em;
+
+    }
+
+    .footer-copyright {
+
+        padding-top: 2em;
+
+    }
+
+    h3 {
+
+        font-size: 22px !important;
+
+    }
+
+    h4 {
+
+        font-size: 20px !important;
+
+    }
+
+    h5 {
+
+        font-size: 18px !important;
+
+    }
+
+    p {
+
+        font-size: 14px !important;
+
+    }
+
+
+
+    .one-stop p {
+
+        background-position-y: 40px;
+
+        padding-bottom: 30px;
+
+        margin-bottom: 0;
+
+    }
+
+
+
+}
+
+
+
+@media (max-width: 480px) {
+
+    .cretona-unordered .get-cretona-started {
+
+        font-size: 14px;
+
+    }
+
+
+
+    .one-stop p {
+
+        background-image: none;
+
+    }
+
+    a.navbar-brand.hidden-lg-up {
+
+        max-width: 70%;
+
+    }
+
+    li.cretona-started {
+
+        padding: 14px 20px;
+
+        margin-right: 0;
+
+    }
+
+    .costs-content h3 {
+
+        padding-bottom: 0;
+
+        background-image: none;
+
+    }
+
+    .address-extra h3 {
+
+        background-image: none;
+
+        padding-bottom: 0;
+
+    }
+
+    .footer-content h5 {
+
+        background-image: none;
+
+        padding-bottom: 0;
+
+    }
+
+}
+
+
+
+@media (max-width: 380px) {
+
+    .nav-container .navbar-brand {
+
+        margin-left: 5px;
+
+    }
+
+    .nav-container .navbar-toggler {
+
+        margin-right: 5px;
+
+    }
+
+    li.cretona-started {
+
+        padding: 14px 16px;
+
+    }
+
+    .live-call {
+
+        padding: 0;
+
+    }
+
+    .cretona-unordered .get-cretona-started {
+
+        font-size: 16px;
+
+    }
+
+    li.cretona-started {
+
+        padding: 14px 10px;
+
+    }
+
+
+
+}
+
+
+
+@media (max-width: 380px) {
+
+    .cretona-unordered .cretona-live a {
+
+        font-size: 13px;
+
+    }
+
+    .cretona-unordered .get-cretona-started {
+
+        font-size: 14px;
+
+    }
+
+    li.cretona-started {
+
+        padding: 18px 6px;
+
+    }
+
+
+
+
+
+}
+

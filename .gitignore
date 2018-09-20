@@ -1,0 +1,11 @@
+# package directories
+node_modules
+jspm_packages
+.env
+Procfile
+app.json
+package-lock.json
+.nuxt
+
+# Serverless directories
+.serverless
