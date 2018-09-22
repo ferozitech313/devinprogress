@@ -3575,6 +3575,42 @@ a.btn-floating.right-slider {
 .nav-container .navbar-brand {
     border: none;
 }
+.address-extras.peronal-tab .extra-input {
+    float: left;
+    padding: 20px 15px;
+}
+.address-extras.peronal-tab .address-extra {
+    float: left;
+    padding: 20px 15px;
+}
+div#formmodal input {
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #333333;
+    padding: 0 0 16px 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: 'latobold';
+    color: #333333;
+    font-size: 14px;
+    text-transform: uppercase;
+    float: left;
+    padding: 20px 15px;
+}
+div#formmodal textarea {
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #333333;
+    padding: 0 0 16px 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: 'latobold';
+    color: #333333;
+    font-size: 14px;
+    text-transform: uppercase;
+    float: left;
+    padding: 20px 15px;
+}
 @media (max-width: 1300px) {
 
     .trust-worthy {
