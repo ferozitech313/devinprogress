@@ -36,7 +36,7 @@
 
                     <div class="col-lg-3 col-md-6 col-sm-12 vacant-card" v-if="properties.length > 0" v-for="(property,i) in properties" :key="i">
                         <div class="card">
-                            <img class="card-img-top" v-if="property.images[0]" :src="property.images[0].image" alt="Card image cap">
+                            <img class="card-img-top" v-if="property.images.length > 0" :src="property.images[0].image" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title"><a :href="'/property/'+property.slug">{{ property.address }}</a></h5>
 

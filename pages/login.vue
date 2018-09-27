@@ -62,7 +62,7 @@
 
                 email:"",
                 password:"",
-                remember:0
+                remember:false
 
             }
         },
@@ -78,7 +78,7 @@
                     email: this.email,
                     password: this.password,
                 }
-                console.log(payload)
+               // console.log(payload)
                 const options = {
                     method: 'POST',
                     headers: {
@@ -91,7 +91,7 @@
                 };
                 axios(options) .then((res) => {
 
-                    console.log(res)
+                   // console.log(res)
                     if (res.data.status) {
                         const auth = {
                             accessToken: res.data.user.id,
