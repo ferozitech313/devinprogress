@@ -23,7 +23,7 @@
                             Register
                         </nuxt-link>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <nuxt-link class="dropdown-item" to="#">As Tenant</nuxt-link>
+                            <nuxt-link class="dropdown-item" to="/tenant/signup">As Tenant</nuxt-link>
                             <nuxt-link class="dropdown-item" to="/property-manager/register">As Property Manager</nuxt-link>
                         </div>
                     </li>

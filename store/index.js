@@ -134,6 +134,7 @@ const createStore = () => {
                     axios(options) .then((res) => {
                         console.log(res)
                         if (res.data.status) {
+                            commit('setNewProperty',{id:res.data.property[0]})
                             $nuxt.$router.push("/property-manager/my_properties")
                         }
                     });

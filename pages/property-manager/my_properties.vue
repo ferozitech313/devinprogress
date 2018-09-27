@@ -30,14 +30,14 @@
 
                         <div class="row">
                             <div class="col-lg-offset-4 col-lg-3">
-                                <a href="/property/add_property" class="btn btn-primary">Add Property</a>
+                                <a href="/add_property" class="btn btn-primary">Add Property</a>
                             </div>
                         </div>
 
                         <div class="col-lg-3 col-md-6 col-sm-12 vacant-card" v-if="properties.length > 0" v-for="(property,i) in properties" :key="i">
                             <div class="card">
                                 <div class="thumbnail-image">
-                                <img class="card-img-top" v-if="property.images[0]" :src="property.images[0].image" alt="Card image cap">
+                                <img class="card-img-top" v-if="property.images.length > 0" :src="property.images[0].image" alt="Card image cap">
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title"><nuxt-link :to="'/property/'+property.slug">{{ property.address }}</nuxt-link></h5>
@@ -73,7 +73,7 @@
 
     import axios from 'axios'
 
-
+    var cookieparser = require('cookieparser')
 
     export default {
         layout:'frontend',
@@ -81,19 +81,17 @@
         head: {
             titleTemplate: 'My Properties',
         },
-        async fetch ({ store, params }) {
-
+        async fetch ({ store, params}) {
                 const options = {
                     method: 'POST',
                     headers: {
-
                         'Content-Type': 'application/json'// Required for CORS support to work
                         // "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
                     },
-                    data:{manager_id:this.$store.getters.user.user_id},
+                    data:{manager_id:store.getters.auth.accessToken},
                     url:'https://p79hsy5ji0.execute-api.us-east-1.amazonaws.com/dev/property/my_property',
                 };
-             await   axios(options) .then((res) => {
+             await axios(options) .then((res) => {
                         console.log(res)
                       store.commit('setProperties',res.data.properties)
                 });

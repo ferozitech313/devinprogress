@@ -30,7 +30,7 @@
 
                     <div class="row">
                         <div class="col-lg-offset-4 col-lg-3">
-                            <a href="/property/add_property" class="btn btn-primary">Add Property</a>
+                            <a href="/add_property" class="btn btn-primary">Add Property</a>
                         </div>
                     </div>
 

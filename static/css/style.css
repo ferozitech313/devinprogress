@@ -418,6 +418,7 @@ body {
     color: #e0e0e0;
     font-size: 16px;
     border: none;
+    border: 1px solid;
 }
 
 .contact-info select {
@@ -427,7 +428,7 @@ body {
     padding: 6px 20px;
     color: #171717;
     font-size: 16px;
-    border: none;
+    border: 1px solid;
 }
 
 .contact-info a {

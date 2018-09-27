@@ -48,7 +48,7 @@
               <div class="col-xs-12 col-sm-12 col-md-12 address-extra">
                 <button type="submit" class="btn btn-primary">
                   <span> Submit</span>
-                  <img src="images/arrow-right.png">
+                  <img src="/images/arrow-right.png">
 
                 </button>
               </div>
@@ -263,7 +263,6 @@ export default {
 
             let payload = {
                 message:this.first_name + " " + this.last_name +" has contact you and wrote this comment: " + this.comment+ " phone: " + this.phone+". Email Address: " + this.email,
-
             }
 
 

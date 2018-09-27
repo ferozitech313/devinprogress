@@ -57,7 +57,7 @@
                                         <div class="col-xs-12 col-sm-12 col-md-12 address-extra address-btn">
                                             <button type="submit" class="btn btn-primary">
                                                 <span> Submit</span>
-                                                <img src="images/arrow-right.png">
+                                                <img src="/images/arrow-right.png">
                                             </button>
                                         </div>
                                     </form>
