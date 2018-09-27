@@ -22,7 +22,13 @@
                                     <input type="password" v-model="password" id="password" name="form-zip" class="form-control set-input inner-input">
                                 </div>
                             </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 extra-input">
+                                <div class="form-group">
 
+                                    <input type="checkbox" v-model="remember"  value="1" id="remember"  class="form-control">
+                                    <label for="remember">Remember Me</label>
+                                </div>
+                            </div>
                             <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 extra-input">
                                 <div class="form-group">
 
@@ -55,7 +61,8 @@
             return {
 
                 email:"",
-                password:""
+                password:"",
+                remember:0
 
             }
         },
@@ -91,8 +98,14 @@
                             accessType: res.data.user.user_type,
                         }
 
+                        if(this.remember){
+                            Cookie.set('auth', auth, { expires: 365 })
+
+                        }else{
+                            Cookie.set('auth', auth)
+                        }
                         store.commit('update', auth) // mutating to store for client rendering
-                        Cookie.set('auth', auth) // saving token in cookie for server rendering
+
 
                         router.push('/property-manager/dashboard')
                     }else{

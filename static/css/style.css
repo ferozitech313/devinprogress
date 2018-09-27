@@ -3612,6 +3612,11 @@ div#formmodal textarea {
     float: left;
     padding: 20px 15px;
 }
+.property-location .extra-input .form-group input#remember {
+    float: left;
+    width: auto;
+    margin: 8px;
+}
 @media (max-width: 1300px) {
 
     .trust-worthy {
