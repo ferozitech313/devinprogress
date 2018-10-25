@@ -1,39 +1,40 @@
 <template>
     <div>
+        <div class="row" v-for="(previous_address,index) in previous_addresses" :key="index">
         <div class="col-xs-6 col-sm-12 col-md-6 contact-info">
             <div class="form-group">
                 <label>Address Line 1</label>
-                <input type="text" required="" v-model="address_line_one"  class="form-control">
+                <input type="text" required="" v-model="previous_address.address_line_one"  class="form-control">
             </div>
         </div>
         <div class="col-xs-6 col-sm-12 col-md-6 contact-info">
             <div class="form-group">
                 <label>Address Line 2</label>
-                <input type="text" required="" v-model="address_line_two"  class="form-control">
+                <input type="text" required="" v-model="previous_address.address_line_two"  class="form-control">
             </div>
         </div>
         <div class="col-xs-6 col-sm-12 col-md-2 contact-info">
             <div class="form-group">
                 <label>City</label>
-                <input type="text" required="" v-model="city"  class="form-control">
+                <input type="text" required="" v-model="previous_address.city"  class="form-control">
             </div>
         </div>
         <div class="col-xs-6 col-sm-12 col-md-2 contact-info">
             <div class="form-group">
                 <label>State</label>
-                <input type="text" required v-model="state" class="form-control">
+                <input type="text" required v-model="previous_address.state" class="form-control">
             </div>
         </div>
         <div class="col-xs-6 col-sm-12 col-md-2 contact-info">
             <div class="form-group">
                 <label>Zip</label>
-                <input type="text" required="" v-model="zip"  class="form-control">
+                <input type="text" required="" v-model="previous_address.zip"  class="form-control">
             </div>
         </div>
         <div class="col-xs-6 col-sm-12 col-md-6 contact-info">
             <div class="form-group">
                 <label>Country</label>
-                <select v-model="country" class="form-control">
+                <select v-model="previous_address.country" class="form-control">
                     <option value="" selected="selected">Select Country</option>
                     <option value="United States">United States</option>
                     <option value="United Kingdom">United Kingdom</option>
@@ -283,12 +284,12 @@
         <div class="col-xs-6 col-sm-12 col-md-3 contact-info">
             <div class="form-group">
                 <label>Resided from</label>
-                <input type="text" required="" v-model="resided_from"  class="form-control">
+                <input type="text" required="" v-model="previous_address.resided_from"  class="form-control">
             </div>
         </div>
         <div class="col-xs-6 col-sm-12 col-md-3 contact-info">
             <div class="form-group resided-from">
-                <select v-model="year" class="form-control" >
+                <select v-model="previous_address.year" class="form-control" >
                     <option>Year</option>
                     <option>2017</option>
                     <option>2016</option>
@@ -304,40 +305,49 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">$</span>
                     </div>
-                    <input type="text" v-model="monthly_rent" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <input type="text" v-model="previous_address.monthly_rent" class="form-control" aria-label="Amount (to the nearest dollar)">
                 </div>
             </div>
         </div>
         <div class="col-xs-6 col-sm-12 col-md-6 contact-info">
             <div class="form-group">
                 <label>Landlord</label>
-                <input type="text" required="" v-model="landlord"  class="form-control">
+                <input type="text" required="" v-model="previous_address.landlord"  class="form-control">
             </div>
         </div>
         <div class="col-xs-6 col-sm-12 col-md-6 contact-info">
             <div class="form-group">
                 <label>Landlord phone number</label>
-                <input type="text" required=""  v-model="landlord_phone_number" class="form-control">
+                <input type="text" required=""  v-model="previous_address.landlord_phone_number" class="form-control">
             </div>
         </div>
         <div class="col-xs-6 col-sm-12 col-md-12 contact-info">
             <div class="form-group">
                 <label>landlord e-mail address</label>
-                <input type="text" required="" v-model="landlord_email_address"  class="form-control">
+                <input type="text" required="" v-model="previous_address.landlord_email_address"  class="form-control">
             </div>
         </div>
         <div class=" col-sm-12 col-md-12 contact-info">
             <div class="form-group">
                 <label  >reason for leaving</label>
-                <textarea class="form-control" rows="5" v-model="reason_for_leaving" ></textarea>
+                <textarea class="form-control" rows="5" v-model="previous_address.reason_for_leaving" ></textarea>
             </div>
         </div>
-        <div class="col-md-12 col-sm-12 contact-info">
-            <h2>Previous addresses</h2>
-            <div class="col-md-12 col-sm-12 float-left">
-                <a class="phone-number" href="#">
-                    <i class="fas fa-plus-circle"></i>
-                    <span>Add Previous addresses</span></a>
+            <div class="col-md-12 col-sm-12 contact-info" :data-id="index" v-if="previous_address.add">
+                <h2>Previous address</h2>
+                <div class="col-md-12 col-sm-12 float-left">
+                    <a class="phone-number" href="#" @click.prevent="addLine">
+                        <i class="fas fa-plus-circle"></i>
+                        <span> Previous address</span></a>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 contact-info" v-if="previous_address.remove">
+
+                <div class="col-md-12 col-sm-12 float-left">
+                    <a class="phone-number" href="#" @click.prevent="removeLine(index)" v-if="previous_addresses.length > 1">
+                        <i class="fas fa-plus-circle"></i>
+                        <span> Remove address</span></a>
+                </div>
             </div>
         </div>
 
@@ -348,8 +358,63 @@
 
         data (){
             return {
-                previous_address_line_one:"",
-                previous_address_line_two:""
+                previous_addresses:[{
+                    address_line_one:"",
+                    address_line_two:"",
+                    city:"",
+                    state:"",
+                    zip:"",
+                    country:"",
+                    resided_from:"",
+                    year:"",
+                    monthly_rent:"",
+                    landlord:"",
+                    landlord_phone_number:"",
+                    landlord_email_address:"",
+                    reason_for_leaving:"",
+                    add:true,
+                    remove:false
+                }],
+                blockRemoval: true,
+
+
+            }
+        },
+        watch: {
+            previous_addresses () {
+                this.blockRemoval = this.previous_addresses.length <= 1
+            }
+        },
+        methods:{
+            addLine (e) {
+
+                let checkEmptyLines = this.previous_addresses.filter(line => line.number === null)
+
+                if (checkEmptyLines.length >= 1 && this.previous_addresses.length > 0) return
+
+                 $(e.target).data('id')
+                this.previous_addresses.push({
+                    address_line_one:null,
+                    address_line_two:null,
+                    city:null,
+                    state:null,
+                    zip:null,
+                    country:null,
+                    resided_from:null,
+                    year:null,
+                    monthly_rent:null,
+                    landlord:null,
+                    landlord_phone_number:null,
+                    landlord_email_address:null,
+                    reason_for_leaving:null,
+                    add:true,
+                    remove:false
+
+                })
+            }
+            ,
+            removeLine (lineId) {
+                if (!this.blockRemoval) this.previous_addresses.splice(lineId, 1)
             }
         }
     }

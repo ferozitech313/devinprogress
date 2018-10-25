@@ -1,30 +1,12 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand navbar-dark bg-primary my-properties-nav">
-            <div class="container">
-                <div class="navbar-collapse collapse">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <nuxt-link class="nav-link active" to="/property-manager/my_properties">MY PROPERTIES</nuxt-link>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="dashboard-all-leads.html">ALL LEADS</a>
-                        </li>
-                        <li class="nav-item number-notification">
-                            <a class="nav-link " href="dashboard-applications.html">APPLICATIONS
-                                <span>1</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
 
+        <NavSecond></NavSecond>
         <div class="container-fluid">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 add-property add-peronal top-pad">
-                        <form method="post" @submit.prevent="onPropertyAdd"  action="#" class="dropzone" drop-zone="" id="file-dropzone">
+                        <form method="post"  @submit.prevent="onPropertyAdd"  action="#" class="dropzone wrapper" drop-zone="" id="file-dropzone">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 property-location">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <h3>Add Property</h3>
@@ -40,7 +22,7 @@
 
                                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 extra-input">
                                     <div class="form-group">
-                                        <label for="form-street">STREET</label>
+                                        <label for="form-street">Address 2</label>
                                         <input type="text" name="street" v-model="street" id="form-street"   class="form-control set-input inner-input">
                                     </div>
                                 </div>
@@ -55,7 +37,22 @@
                                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 extra-input">
                                     <div class="form-group">
                                         <label for="form-state">STATE</label>
-                                        <input type="text" name="state" v-model="state" id="form-state" class="form-control set-input inner-input">
+                                        <select v-model="state" name="state" id="form-state" class="form-control set-input inner-input">
+                                            <option value="British Columbia">British Columbia</option>
+                                            <option value="Alberta">Alberta</option>
+                                            <option value="Saskatchewan">Saskatchewan</option>
+                                            <option value="Manitoba">Manitoba</option>
+                                            <option value="Ontario">Ontario</option>
+                                            <option value="Quebec">Quebec</option>
+                                            <option value="New Brunswick">New Brunswick</option>
+                                            <option value="Nova Scotia">Nova Scotia</option>
+                                            <option value="Prince Edward Island">Prince Edward Island</option>
+                                            <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                                            <option value="Yukon">Yukon</option>
+                                            <option value="Northwest Territories">Northwest Territories</option>
+                                            <option value="Nunavut">Nunavut</option>
+                                        </select>
+
                                     </div>
                                 </div>
 
@@ -77,15 +74,16 @@
 
                                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 extra-input">
                                     <div class="form-group">
-                                        <label for="form-rent">RENT</label>
-                                        <input type="text" name="rent" v-model="rent" id="form-rent" class="form-control set-input inner-input">
+                                        <label for="form-rent">RENT (per month)</label>
+                                        <input type="text" name="rent" v-model="rent" maxlength="6" id="form-rent" class="form-control set-input inner-input">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 extra-input">
                                     <div class="form-group">
                                         <label for="form-bed">BED</label>
-                                        <input type="text" v-model="bed" id="form-bed" name="bed" class="form-control set-input inner-input">
+                                        <input type="text" v-model="bed" maxlength="3" id="form-bed" name="bed" class="form-control set-input inner-input">
+
                                     </div>
                                 </div>
 
@@ -93,7 +91,7 @@
                                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 extra-input">
                                     <div class="form-group">
                                         <label for="form=bath">BATH</label>
-                                        <input type="text" v-model="bath" id="form=bath" name="bath" class="form-control set-input inner-input">
+                                        <input type="text" v-model="bath" maxlength="3" id="form=bath" name="bath" class="form-control set-input inner-input">
                                         <p id="first-name-error" style="display: none"></p>
                                     </div>
                                 </div>
@@ -128,20 +126,33 @@
                                 </div>
 
                             </div>
-
+                            <div class="bottom col-lg-12 col-md-12 col-sm-12 col-xs-12 property-submit" style="float: left;">
+                                                                 <button class="btn btn-default" id="button" type="submit">
+                                                                       <span>Add Property</span>
+                                                                     <img src="/images/arrow-right.png">
+                                                                </button>
+                                                           </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
+
 </template>
 <script>
 
     import axios from "axios";
     import validator from 'validator'
+    import NavSecond from '@/components/frontend/nav_second'
+
     export default {
         layout:'frontend',
+        components:{
+            NavSecond
+        },
+
         data(){
             return {
                 address:"",
@@ -173,7 +184,7 @@
         middleware:'property_manager_guard',
         methods:{
             onPropertyAdd(){
-
+                this.$nuxt.$loading.start()
                 let payload = {
                     address: this.address,
                     street: this.street,
@@ -186,6 +197,18 @@
                     imagesFiles: this.imagesFiles,
                     manager_id: this.$store.getters.auth.accessToken
                 }
+                if(validator.isEmpty(this.address)){
+                    alert('Address field is required.')
+                    return
+                }
+                if(validator.isEmpty(this.state)){
+                    alert('State field is required.')
+                    return
+                }
+                if(validator.isEmpty(this.city)){
+                    alert('City field is required.')
+                    return
+                }
                 if(!validator.isNumeric(this.rent)){
                     alert('Rent has to be numeric value')
                     return
@@ -195,13 +218,24 @@
                 }else  if(!validator.isNumeric(this.bath)){
                     alert('Bath has to be numeric value')
                     return
+                }else  if(!validator.isLength(this.rent,{min:0, max: 6})){
+                    alert('Rent can only have 6 numeric characters. ')
+                    return
+                }else  if(!validator.isLength(this.bed,{min:0, max: 3})){
+                    alert('Bed can only have 3 numeric characters. ')
+                    return
+                }else  if(!validator.isLength(this.bath,{min:0, max: 3})){
+                    alert('Bed can only have 3 numeric characters. ')
+                    return
                 }
+
                 this.$store.dispatch('onPropertyAdd',payload)
 
 
             }
         },
         mounted(){
+
             var vm = this;
             if (process.browser) {
                 window.onNuxtReady((app) => {
@@ -219,7 +253,7 @@
                         maxFiles: 100,
                         parallelUploads: 100,
                         uploadMultiple: true,
-                        // previewTemplate : $('.preview').html(),
+                         previewTemplate : $('.preview').html(),
                         init: function () {
 
                            this.on("addedfile", function (file) {
@@ -242,11 +276,12 @@
                                     // If you want to the delete the file on the server as well,
                                     // you can do the AJAX request here.
                                 });
-
+                                $('.dz-default').show();
                                 // Add the button to the file preview element.
                                 file.previewElement.appendChild(removeButton);
 
                                vm.imagesFiles.push(file)
+
                             });
 
                            this.on('completemultiple', function (file, json) {
@@ -258,12 +293,12 @@
                         }
                     });
 
-                    $('#file-dropzone').append(' <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 property-submit" style="float: left;">\n' +
-                        '                                <button class="btn btn-default" id="button" type="submit">\n' +
-                        '                                    <span>Add Property</span>\n' +
-                        '                                    <img src="/images/arrow-right.png">\n' +
-                        '                                </button>\n' +
-                        '                            </div>')
+//                    $('#file-dropzone').append(' <div class="bottom col-lg-12 col-md-12 col-sm-12 col-xs-12 property-submit" style="float: left;">\n' +
+//                        '                                <button class="btn btn-default" id="button" type="submit">\n' +
+//                        '                                    <span>Add Property</span>\n' +
+//                        '                                    <img src="/images/arrow-right.png">\n' +
+//                        '                                </button>\n' +
+//                        '                            </div>')
                 });
             }
         }

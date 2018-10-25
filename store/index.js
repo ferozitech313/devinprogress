@@ -132,9 +132,10 @@ const createStore = () => {
                         url:'https://p79hsy5ji0.execute-api.us-east-1.amazonaws.com/dev/property/add_property',
                     };
                     axios(options) .then((res) => {
-                        console.log(res)
+
                         if (res.data.status) {
                             commit('setNewProperty',{id:res.data.property[0]})
+
                             $nuxt.$router.push("/property-manager/my_properties")
                         }
                     });

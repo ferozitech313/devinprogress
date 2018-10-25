@@ -7,19 +7,21 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 property-location">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                                <h4>Register / Tenant</h4>
+                                <h4>Register / Property Manager</h4>
                             </div>
-
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <p style="font-size: large"><span class="red-asterisk">*</span> for Required field</p>
+                            </div>
                             <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 extra-input">
                                 <div class="form-group">
-                                    <label for="form-street">First Name</label>
+                                    <label for="form-street"><span class="red-asterisk">*</span> First Name</label>
                                     <input type="text" v-model="first_name" id="form-street" name="form-street" class="form-control set-input inner-input">
                                 </div>
                             </div>
 
                             <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 extra-input">
                                 <div class="form-group">
-                                    <label for="form-city">Last Name</label>
+                                    <label for="form-city"><span class="red-asterisk">*</span> Last Name</label>
                                     <input type="text" v-model="last_name" id="form-city" name="form-city" class="form-control set-input inner-input">
                                 </div>
                             </div>
@@ -32,19 +34,19 @@
                             </div>
                             <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 extra-input">
                                 <div class="form-group">
-                                    <label for="form-email">Email</label>
+                                    <label for="form-email"><span class="red-asterisk">*</span> Email</label>
                                     <input type="email" v-model="email" id="form-email" name="form-state" class="form-control set-input inner-input">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 extra-input">
                                 <div class="form-group">
-                                    <label for="password">Password</label>
+                                    <label for="password"><span class="red-asterisk">*</span> Password</label>
                                     <input type="password" v-model="password" id="password" name="form-zip" class="form-control set-input inner-input">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 extra-input">
                                 <div class="form-group">
-                                    <label for="c-password">Confirm Password</label>
+                                    <label for="c-password"><span class="red-asterisk">*</span> Confirm Password</label>
                                     <input type="password" v-model="c_password" id="c-password" name="form-zip" class="form-control set-input inner-input">
                                 </div>
                             </div>
@@ -89,13 +91,40 @@
         methods:{
             onRegisterTenant(store,router){
 
+                if(validator.isEmpty(this.first_name)){
+                    alert('First name field is required.')
+                    return
+                }
 
+                if(validator.isEmpty(this.last_name)){
+                    alert('last name field is required.')
+                    return
+                }
+
+                if(!validator.isAlphanumeric(this.phone)){
+                    alert('Phone number is not of valid type. Only alpha-numeric are allowed.')
+                    return
+                }
+
+                if(validator.isEmpty(this.password)){
+                    alert('Password field is required.')
+                    return
+                }
+                if(validator.isEmpty(this.c_password)){
+                    alert('Password confirmation field is required.')
+                    return
+                }
                 if(!validator.equals(this.password,this.c_password)){
-                    alert('Password do not match.')
+                    alert('Passwords do not match.')
                     return
                 }
                 if(!validator.isEmail(this.email)){
                     alert('Email is invalid.')
+                    return
+                }
+
+                if(validator.isEmpty(this.email)){
+                    alert('Email field is required.')
                     return
                 }
 
@@ -121,8 +150,9 @@
 
                             //console.log(res)
                         if (res.data.status) {
+                            console.log(res.data)
                             const auth = {
-                                accessToken: res.data.user.id,
+                                accessToken: res.data.user[0],
                                 accessType: 'Property Manager',
                             }
 

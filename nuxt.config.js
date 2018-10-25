@@ -18,7 +18,7 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
-  loading: { color: '#3B8070' },
+    loading: '~/components/loading.vue',
 
     env:{
         AWS_ACCESS_KEY_ID : process.env.AWS_ACCESS_KEY_ID,

@@ -139,10 +139,19 @@ import Footer from '@/components/frontend/footer'
         }
 </script>
 <style>
-    li > .nuxt-link-exact-active{
+    ul.navbar-nav.nav-fill.ml-auto.cretona-pages li > .nuxt-link-exact-active{
         background-image: url(../static/images/bottom-border.png);
         background-position: bottom;
         background-repeat: no-repeat;
         color: #03a9f4!important;
+        /*background-color: #03a9f4!important;*/
     }
+    .my-properties-nav li > .nuxt-link-exact-active{
+        background-image: url(../static/images/bottom-border.png);
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-color: #03a9f4!important;
+        color: #fff !important;
+    }
+
 </style>

@@ -1,24 +1,6 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand navbar-dark bg-primary my-properties-nav">
-            <div class="container">
-                <div class="navbar-collapse collapse">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <nuxt-link class="nav-link active" to="/property-manager/my_properties">MY PROPERTIES</nuxt-link>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="dashboard-all-leads.html">ALL LEADS</a>
-                        </li>
-                        <li class="nav-item number-notification">
-                            <a class="nav-link " href="dashboard-applications.html">APPLICATIONS
-                                <span>1</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <NavSecond></NavSecond>
 
         <div class="container-fluid">
             <div class="container">
@@ -36,37 +18,25 @@
                             </div>
                             <div class="col-lg-4 col-md-12 col-sm-12 yearly-rent">
                                 <h6 class="solid-blue">Rent</h6>
-                                <h6>${{ newProperty.rent }} / Year.</h6>
+                                <h6>${{ newProperty.rent }} / Month.</h6>
                             </div>
                             <div class="col-lg-4 col-md-12 col-sm-12 number-of-bedrooms">
-                                <h6 class="solid-blue">Bedroom</h6>
+                                <h6 class="solid-blue">Bedroom(s)</h6>
                                 <h6>2</h6>
                             </div>
                             <div class="col-lg-4 col-md-12 col-sm-12 number-of-bathrooms">
-                                <h6 class="solid-blue">Bathroom</h6>
+                                <h6 class="solid-blue">Bathroom(s)</h6>
                                 <h6>{{ newProperty.bed }}</h6>
 
                             </div>
                         </div>
 
                         <div class="col-lg-12 col-md-12 col-sm-12 buildings-images">
-                            <h3>Property IMAGES</h3>
+                            <h3>Property Images</h3>
                             <div class="col-lg-2 col-md-2 col-sm-6 images-detail" v-for="(image,i) in newProperty.images" :key="i">
+                                <a :href="image.image" data-lightbox="roadtrip">
                                 <img :src="image.image" class="add-image">
-                                <div class="middle-image">
-                                    <div class="inner-middle">
-                                        <p>
-                                            <a href="#">
-                                                <img class="eye-buttom" src="/images/icon-9.png">
-                                            </a>
-                                        </p>
-                                        <p><img class="w-100" src="/images/bottom-border-4.png"></p>
-                                        <p> <a href="#">
-                                            <img src="/images/icon-10.png">
-                                        </a></p>
-
-                                    </div>
-                                </div>
+                                </a>
                             </div>
 
                             <div class="col-lg-2 col-md-2 col-sm-6 images-detail" id="images_row">
@@ -95,8 +65,12 @@
 <script>
 
     import axios from "axios";
+    import NavSecond from '@/components/frontend/nav_second'
 
     export default {
+        components:{
+            NavSecond
+        },
         data(){
             return{
                 imageUrl:"",
@@ -135,6 +109,7 @@
             link: [
 
                 // { rel: "stylesheet", href: "../css/basic.min.css" },
+                { rel: "stylesheet", href: "../css/lightbox.min.css" },
                 { rel: "stylesheet", href: "../css/dropzone.min.css" },
 
             ],
@@ -142,6 +117,7 @@
 
                 {src:'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.js'},
                 {src:'../js/dropzone.min.js'},
+                {src:'../js/lightbox.min.js'},
 
             ]
         },

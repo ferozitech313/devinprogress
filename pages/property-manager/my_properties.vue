@@ -1,25 +1,7 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand navbar-dark bg-primary my-properties-nav">
-            <div class="container">
-                <div class="navbar-collapse collapse">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <nuxt-link class="nav-link active" to="/property-manager/my_properties">MY PROPERTIES</nuxt-link>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="dashboard-all-leads.html">ALL LEADS</a>
-                        </li>
-                        <li class="nav-item number-notification">
-                            <a class="nav-link " href="dashboard-applications.html">APPLICATIONS
-                                <span>1</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
 
+        <NavSecond></NavSecond>
         <div class="container-fluid">
             <div class="container">
                 <div class="row">
@@ -34,10 +16,12 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-6 col-sm-12 vacant-card" v-if="properties.length > 0" v-for="(property,i) in properties" :key="i">
+                        <div class="col-lg-3 col-md-6 col-sm-12 vacant-card" v-if="properties" v-for="(property,i) in properties" :key="i">
                             <div class="card">
                                 <div class="thumbnail-image">
-                                <img class="card-img-top" v-if="property.images.length > 0" :src="property.images[0].image" alt="Card image cap">
+                                <img class="card-img-top" v-if="property.images" :src="property.images[0].image" alt="Card image cap">
+                                    <img class="card-img-top"  src="https://blog.stylingandroid.com/wp-content/themes/lontano-pro/images/no-image-slide.png" alt="Card image cap" v-else>
+
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title"><nuxt-link :to="'/property/'+property.slug">{{ property.address }}</nuxt-link></h5>
@@ -50,7 +34,7 @@
                                     </div>
 
                                     <div class="rented-table2">
-                                        <button class="btn btn-default">TENANT</button>
+                                        <nuxt-link to="/tenant/index" class="btn btn-default">TENANT</nuxt-link>
                                     </div>
                                 </div>
                             </div>
@@ -58,7 +42,7 @@
 
                         </div>
                         <!--<pagination :url="'/property-manager/my_properties'"></pagination>-->
-                        <div  class="col-lg-12 col-md-12 col-sm-12 vacant-card" v-if="properties.length === 0" >
+                        <div  class="col-lg-12 col-md-12 col-sm-12 vacant-card" v-else >
                             <p >No Property available at this moment</p>
                         </div>
 
@@ -72,16 +56,19 @@
 
 
     import axios from 'axios'
-
+    import NavSecond from '@/components/frontend/nav_second'
     var cookieparser = require('cookieparser')
 
     export default {
+        components:{
+            NavSecond
+        },
         layout:'frontend',
 
         head: {
             titleTemplate: 'My Properties',
         },
-        async fetch ({ store, params}) {
+        asyncData ({ store, params}) {
                 const options = {
                     method: 'POST',
                     headers: {
@@ -91,18 +78,22 @@
                     data:{manager_id:store.getters.auth.accessToken},
                     url:'https://p79hsy5ji0.execute-api.us-east-1.amazonaws.com/dev/property/my_property',
                 };
-             await axios(options) .then((res) => {
-                        console.log(res)
-                      store.commit('setProperties',res.data.properties)
-                });
+            return axios(options) .then((res) => {
+                      //  console.log(res)
+                   store.commit('setProperties',res.data.properties)
+                   return {properties: res.data.properties}
 
-
+             });
         },
         computed:{
-            properties(){
-
-                return this.$store.getters.properties
-            }
+//            properties(){
+//               if(this.$store.getters.properties){
+//                   return this.$store.getters.properties;
+//               }else{
+//                   return [];
+//               }
+//
+//            }
         },
         middleware:'property_manager_guard',
         methods:{

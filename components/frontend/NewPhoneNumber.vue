@@ -17,14 +17,14 @@
                 </select>
             </div>
         </div>
-        <div class="col-xs-6 col-sm-12 col-md-6 contact-info">
+        <div class="col-xs-6 col-sm-12 col-md-6 contact-info" >
             <div class="form-group">
                 <a class="phone-number" href="#" @click.prevent="addLine">
                     <i class="fas fa-plus-circle"></i>
                     <span> Add Phone Number</span></a>
             </div>
         </div>
-        <div class="col-xs-6 col-sm-12 col-md-6 contact-info">
+        <div class="col-xs-6 col-sm-12 col-md-6 contact-info" v-if="lines.length > 1">
             <div class="form-group">
                 <a class="phone-number" href="#"  @click.prevent="removeLine(index)">
                     <i class="fas fa-plus-circle"></i>
@@ -40,8 +40,7 @@
 
         data (){
             return {
-                phone_number_type:"",
-                phone_number:"",
+
                 lines: [{
                     phone_number_type: null,
                     phone_number: null,
@@ -55,12 +54,12 @@
             }
         },
         methods:{
-            addLine () {
+            addLine (e) {
 
                 let checkEmptyLines = this.lines.filter(line => line.number === null)
 
                 if (checkEmptyLines.length >= 1 && this.lines.length > 0) return
-
+                $(e.target).parent().hide();
                 this.lines.push({
                     phone_number_type: null,
                     phone_number: null,

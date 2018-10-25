@@ -56,17 +56,20 @@ body {
     font-size: 14px;
 }
 
-h1,
-h2,
+h1,h2{
+    font-family: 'latobold';
+}
 h3 {
-    font-family: '';
+    font-family: 'latoblack';
 }
 
 h4 {
-    font-family: '';
+    font-family: 'montserratregular';
 }
 
-h4 {}
+h5,h6 {
+       font-family: 'latoregular';
+}
 
 p {
     font-family: 'latoregular';
@@ -980,7 +983,7 @@ li.cretona-started {
 
 
 .peronal-tab .form-group input,
-.peronal-tab .form-group textarea {
+.peronal-tab .form-group textarea ,.peronal-tab .form-group select{
     border: none;
     background-color: transparent;
     border-bottom: 1px solid #333333;
@@ -3624,7 +3627,32 @@ div#formmodal textarea {
         padding-bottom: 10em;
     }
 }
-
+.red-asterisk{
+    color: red;
+}
+.add-peronal select#form-state {
+    border: 2px solid #9e9e9e;
+    border-radius: 0;
+    height: 45px;
+    min-height: 48px;
+}
+.bottom.property-submit {
+    bottom: 0;
+    padding-bottom: 20px;
+}
+.dz-preview.dz-file-preview img {
+    max-height: 100px;
+}
+li.dz-image-preview {
+    list-style: none;
+    float: left;
+}
+.add-property form#file-dropzone {
+    padding-bottom: 7em;
+}
+.dropzone a.remove-btn {
+    margin: 16px;
+}
 @media (max-width: 1287px) {}
 
 @media (max-width: 1199px) {
@@ -3804,9 +3832,6 @@ div#formmodal textarea {
     .peronal-tab {
         max-width: 50%;
     }
-    .cretona-women {
-        background-size: contain;
-    }
     .service-service .service-image {
         max-width: 100%;
         text-align: center;
@@ -3830,15 +3855,15 @@ div#formmodal textarea {
         width: 60%;
     }
     .cost-text {
-        padding-top: 2em;
+        padding-top: 1em;
     }
     .more-right {
-        padding-left: 2em;
-        padding-right: 2em;
+        padding-left: 0.3em;
+        padding-right: 0.3em;
     }
     .more-left {
-        padding-left: 2em;
-        padding-right: 2em;
+        padding-left: 0.3em;
+        padding-right: 0.3em;
     }
     .blue-shape::after {
         overflow: hidden;
@@ -3895,7 +3920,9 @@ div#formmodal textarea {
     .online-rent {
         padding-bottom: 3.5em;
     }
-
+    .trust-worthy .service-text .start-saving {
+     width: 100%
+    }
     /*property-managers*/
 }
 
@@ -4340,7 +4367,10 @@ div#formmodal textarea {
     .collect-rent p {
         margin-bottom: 0;
     }
-
+    .cost-text {
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
     /*property-managers*/
 }
 
@@ -4470,7 +4500,7 @@ div#formmodal textarea {
     }
     .estate-industry {
         max-width: 100%;
-        margin-bottom: 2em;
+        margin-bottom: 3em;
     }
     .cretona-women {
         text-align: center;
@@ -4523,6 +4553,7 @@ div#formmodal textarea {
     }
     .property-owners .one-stop h3 {
         line-height: 45px;
+        margin-bottom: 0px;
     }
     .trust-worthy {
         padding-top: 3em;
@@ -4541,6 +4572,20 @@ div#formmodal textarea {
     }
     .cost-text h4 {
         line-height: 40px;
+    }
+    .address-extra h3, .allleads-div .bottom-line {
+    background-position: center;
+    background-position-y: bottom;
+    text-align: center;
+    }
+    .estate-industry p {
+    margin-top: 1em;
+     }
+     .cost-text h4 {
+    padding-bottom: 12px;
+    }
+    .bio-text p {
+    font-size: 16px;
     }
     /*property-managers*/
 }
@@ -4757,6 +4802,13 @@ div#formmodal textarea {
     /*property-managers*/
     .online-rent {
         padding-bottom: 15px;
+    }
+    .costs-content {
+    padding-top: 3em;
+    padding-bottom: 2em;
+   }
+   .cretona-eliminates .one-stop {
+    margin-bottom: 0em;
     }
     /*property-managers*/
 }
@@ -5019,3 +5071,5 @@ div#formmodal textarea {
         font-size: 10px;
     }
 }
+.wrapper{position:relative;}
+.bottom{position:absolute; bottom:0;}
