@@ -12,10 +12,12 @@
                                     <h3>Add Property</h3>
                                     <h4>PROPERTY LOCATION</h4>
                                 </div>
-
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <p style="font-size: large"><span class="red-asterisk">*</span> for Required field</p>
+                                </div>
                                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 extra-input">
                                     <div class="form-group">
-                                        <label for="form-address">ADDRESS</label>
+                                        <label for="form-address"><span class="red-asterisk">*</span>ADDRESS</label>
                                         <input type="text" v-model="address" id="form-address" name="address" class="form-control set-input inner-input">
                                     </div>
                                 </div>
@@ -29,14 +31,14 @@
 
                                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 extra-input">
                                     <div class="form-group">
-                                        <label for="form-city">CITY</label>
+                                        <label for="form-city"><span class="red-asterisk">*</span>CITY</label>
                                         <input type="text" name="city" v-model="city" id="form-city"   class="form-control set-input inner-input">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 extra-input">
                                     <div class="form-group">
-                                        <label for="form-state">STATE</label>
+                                        <label for="form-state"><span class="red-asterisk">*</span>STATE</label>
                                         <select v-model="state" name="state" id="form-state" class="form-control set-input inner-input">
                                             <option value="">Select State</option>
                                             <option value="Alabama">Alabama</option>
