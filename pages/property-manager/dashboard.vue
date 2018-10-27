@@ -12,6 +12,7 @@
 
                     <div class="row">
                         <div class="col-lg-offset-4 col-lg-3">
+                            
                             <!--<nuxt-link to="/add_property" class="btn btn-primary">Add Property</nuxt-link>-->
                             <a href="/add_property" class="btn btn-primary">Add Property</a>
                         </div>
