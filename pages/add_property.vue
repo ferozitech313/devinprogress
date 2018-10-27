@@ -290,23 +290,24 @@
                 window.onNuxtReady((app) => {
 
                     $('.sortable').sortable();
+                    var myDropzone = new Dropzone('#file-dropzone',{
 
-                    $('#file-dropzone').dropzone({
+                    } , {
                         url: "#",
-                        maxFilesize: 100,
-                        dictDefaultMessage: "Choose or drop  file from your computer",
-                        paramName: "product_images",
-                        // uploadMultiple:true,
-                        maxThumbnailFilesize: 99999,
-                        //   previewsContainer: '.visualizacao',
-                        autoProcessQueue: false,
-                        maxFiles: 100,
-                        parallelUploads: 100,
-                        uploadMultiple: true,
-                         previewTemplate : $('.preview').html(),
-                        init: function () {
+                            maxFilesize: 100,
+                            dictDefaultMessage: "Choose or drop  file from your computer",
+                            paramName: "product_images",
+                            // uploadMultiple:true,
+                            maxThumbnailFilesize: 99999,
+                            //   previewsContainer: '.visualizacao',
+                            autoProcessQueue: false,
+                            maxFiles: 100,
+                            parallelUploads: 100,
+                            uploadMultiple: true,
+                            previewTemplate : $('.preview').html(),
+                            init: function () {
 
-                           this.on("addedfile", function (file) {
+                            this.on("addedfile", function (file) {
 
                                 // Create the remove button
                                 var removeButton = Dropzone.createElement("<a href='#' class='remove-btn' >Remove</a>");
@@ -330,25 +331,18 @@
                                 // Add the button to the file preview element.
                                 file.previewElement.appendChild(removeButton);
 
-                               vm.imagesFiles.push(file)
+                                vm.imagesFiles.push(file)
 
                             });
 
-                           this.on('completemultiple', function (file, json) {
+                            this.on('completemultiple', function (file, json) {
                                 $('.sortable').sortable('enable');
-                           });
+                            });
 
 
 
                         }
                     });
-
-//                    $('#file-dropzone').append(' <div class="bottom col-lg-12 col-md-12 col-sm-12 col-xs-12 property-submit" style="float: left;">\n' +
-//                        '                                <button class="btn btn-default" id="button" type="submit">\n' +
-//                        '                                    <span>Add Property</span>\n' +
-//                        '                                    <img src="/images/arrow-right.png">\n' +
-//                        '                                </button>\n' +
-//                        '                            </div>')
                 });
             }
         }

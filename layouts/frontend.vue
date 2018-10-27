@@ -43,7 +43,7 @@ import Footer from '@/components/frontend/footer'
             mounted(){
                 if (process.browser) {
                     window.onNuxtReady((app) => {
-
+                        Dropzone.autoDiscover = false;
                         $(".navbar-nav li a").click(function(event) {
                             if (!$(this).parent().hasClass('dropdown'))
                                 $(".navbar-collapse").collapse('hide');
