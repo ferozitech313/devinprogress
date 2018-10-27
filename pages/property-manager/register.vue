@@ -29,7 +29,7 @@
                             <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 extra-input">
                                 <div class="form-group">
                                     <label for="form-state">Phone</label>
-                                    <input type="text" v-model="phone" id="form-state" name="form-state" class="form-control set-input inner-input">
+                                    <input type="text" v-model="phone" maxlength="10" id="form-state" name="form-state" class="form-control set-input inner-input">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 extra-input">
@@ -101,10 +101,18 @@
                     return
                 }
 
-                if(!validator.isAlphanumeric(this.phone)){
-                    alert('Phone number is not of valid type. Only alpha-numeric are allowed.')
-                    return
+                if(!validator.isEmpty(this.phone)){
+                    if(validator.isAlphanumeric(this.phone)){
+                      if(!validator.isLength(this.phone,{min:0, max: 10})){
+                          alert('Phone number can only contain 10 alpha-numeric values.')
+                          return
+                      }
+                    }else{
+                        alert('Phone number is not of valid type. Only alpha-numeric are allowed.')
+                        return
+                    }
                 }
+
 
                 if(validator.isEmpty(this.password)){
                     alert('Password field is required.')

@@ -38,19 +38,62 @@
                                     <div class="form-group">
                                         <label for="form-state">STATE</label>
                                         <select v-model="state" name="state" id="form-state" class="form-control set-input inner-input">
-                                            <option value="British Columbia">British Columbia</option>
-                                            <option value="Alberta">Alberta</option>
-                                            <option value="Saskatchewan">Saskatchewan</option>
-                                            <option value="Manitoba">Manitoba</option>
-                                            <option value="Ontario">Ontario</option>
-                                            <option value="Quebec">Quebec</option>
-                                            <option value="New Brunswick">New Brunswick</option>
-                                            <option value="Nova Scotia">Nova Scotia</option>
-                                            <option value="Prince Edward Island">Prince Edward Island</option>
-                                            <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
-                                            <option value="Yukon">Yukon</option>
-                                            <option value="Northwest Territories">Northwest Territories</option>
-                                            <option value="Nunavut">Nunavut</option>
+                                            <option value="">Select State</option>
+                                            <option value="Alabama">Alabama</option>
+                                            <option value="Alaska">Alaska</option>
+                                            <option value="Arizona">Arizona</option>
+                                            <option value="Arkansas">Arkansas</option>
+                                            <option value="California">California</option>
+                                            <option value="Colorado">Colorado</option>
+                                            <option value="Connecticut">Connecticut</option>
+                                            <option value="Delaware">Delaware</option>
+                                            <option value="District of Columbia">District of Columbia</option>
+                                            <option value="Florida">Florida</option>
+                                            <option value="Georgia">Georgia</option>
+                                            <option value="Guam">Guam</option>
+                                            <option value="Hawaii">Hawaii</option>
+                                            <option value="Idaho">Idaho</option>
+                                            <option value="Illinois">Illinois</option>
+                                            <option value="Indiana">Indiana</option>
+                                            <option value="Iowa">Iowa</option>
+                                            <option value="Kansas">Kansas</option>
+                                            <option value="Kentucky">Kentucky</option>
+                                            <option value="Louisiana">Louisiana</option>
+                                            <option value="Maine">Maine</option>
+                                            <option value="Maryland">Maryland</option>
+                                            <option value="Massachusetts">Massachusetts</option>
+                                            <option value="Michigan">Michigan</option>
+                                            <option value="Minnesota">Minnesota</option>
+                                            <option value="Mississippi">Mississippi</option>
+                                            <option value="Missouri">Missouri</option>
+                                            <option value="Montana">Montana</option>
+                                            <option value="Nebraska">Nebraska</option>
+                                            <option value="Nevada">Nevada</option>
+                                            <option value="New Hampshire">New Hampshire</option>
+                                            <option value="New Jersey">New Jersey</option>
+                                            <option value="New Mexico">New Mexico</option>
+                                            <option value="New York">New York</option>
+                                            <option value="North Carolina">North Carolina</option>
+                                            <option value="North Dakota">North Dakota</option>
+                                            <option value="Northern Marianas Islands">Northern Marianas Islands</option>
+                                            <option value="Ohio">Ohio</option>
+                                            <option value="Oklahoma">Oklahoma</option>
+                                            <option value="Oregon">Oregon</option>
+                                            <option value="Pennsylvania">Pennsylvania</option>
+                                            <option value="Puerto Rico">Puerto Rico</option>
+                                            <option value="Rhode Island">Rhode Island</option>
+                                            <option value="South Carolina">South Carolina</option>
+                                            <option value="South Dakota">South Dakota</option>
+                                            <option value="Tennessee">Tennessee</option>
+                                            <option value="Texas">Texas</option>
+                                            <option value="Utah">Utah</option>
+                                            <option value="Vermont">Vermont</option>
+                                            <option value="Virginia">Virginia</option>
+                                            <option value="Virgin Islands">Virgin Islands</option>
+                                            <option value="Washington">Washington</option>
+                                            <option value="West Virginia">West Virginia</option>
+                                            <option value="Wisconsin">Wisconsin</option>
+                                            <option value="Wyoming">Wyoming</option>
                                         </select>
 
                                     </div>
@@ -59,7 +102,7 @@
                                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 extra-input">
                                     <div class="form-group">
                                         <label for="form-zip">Zip</label>
-                                        <input type="text" name="zip" v-model="zip" id="form-zip"  class="form-control set-input inner-input">
+                                        <input type="text" name="zip" maxlength="5" v-model="zip" id="form-zip"  class="form-control set-input inner-input">
                                     </div>
                                 </div>
                             </div>
@@ -103,6 +146,7 @@
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <h4>Add PROPERTY IMAGES</h4>
+
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 property-images">
 
@@ -227,6 +271,9 @@
                 }else  if(!validator.isLength(this.bath,{min:0, max: 3})){
                     alert('Bed can only have 3 numeric characters. ')
                     return
+                }else  if(!validator.isLength(this.zip,{min:0, max: 5})){
+                    alert('Zip can only have 5 alpha-numeric characters. ')
+                    return
                 }
 
                 this.$store.dispatch('onPropertyAdd',payload)
@@ -245,6 +292,7 @@
                     $('#file-dropzone').dropzone({
                         url: "#",
                         maxFilesize: 100,
+                        dictDefaultMessage: "Choose or drop  file from your computer",
                         paramName: "product_images",
                         // uploadMultiple:true,
                         maxThumbnailFilesize: 99999,
@@ -270,7 +318,7 @@
                                     // Make sure the button click doesn't submit the form:
                                     e.preventDefault();
                                     e.stopPropagation();
-
+                                    console.log('here')
                                     // Remove the file preview.
                                     _this.removeFile(file);
                                     // If you want to the delete the file on the server as well,
